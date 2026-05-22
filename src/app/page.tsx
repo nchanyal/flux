@@ -1,11 +1,17 @@
-import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import { SignInButton, Show, UserButton } from "@clerk/nextjs";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <SignUpButton mode="modal">
-      <button className="bg-purple-700 text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
-        Sign Up
-      </button>
-    </SignUpButton>
+    <div className="m-4">
+      <Show when={"signed-out"}>
+        <SignInButton mode="modal">
+          <Button>Sign In</Button>
+        </SignInButton>
+      </Show>
+      <Show when={"signed-in"}>
+        <UserButton />
+      </Show>
+    </div>
   );
 }
