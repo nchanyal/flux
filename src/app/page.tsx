@@ -1,5 +1,6 @@
 import { SignInButton, Show, UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
+import ModeToggle from "@/components/ModeToggle";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Show when={"signed-in"}>
         <UserButton />
       </Show>
+      <ModeToggle />
     </div>
   );
 }
