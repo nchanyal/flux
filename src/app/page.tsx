@@ -1,19 +1,3 @@
-import { SignInButton, Show, UserButton } from "@clerk/nextjs";
-import { Button } from "@/components/ui/button";
-import ModeToggle from "@/components/ModeToggle";
-
 export default function Home() {
-  return (
-    <div className="m-4">
-      <Show when={"signed-out"}>
-        <SignInButton mode="modal">
-          <Button>Sign In</Button>
-        </SignInButton>
-      </Show>
-      <Show when={"signed-in"}>
-        <UserButton />
-      </Show>
-      <ModeToggle />
-    </div>
-  );
+  return <h1>home page content</h1>;
 }
