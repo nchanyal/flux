@@ -2,9 +2,9 @@ import { getRandomUsers } from "@/actions/user.actions";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import Link from "next/link";
 import { Avatar, AvatarImage } from "./ui/avatar";
-import FollowButton from "./FollowButton";
+import { FollowButton } from "./FollowButton";
 
-export default async function SuggestedUsers() {
+export async function SuggestedUsers() {
   const users = await getRandomUsers();
 
   if (users.length === 0) return null;

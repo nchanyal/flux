@@ -1,5 +1,5 @@
 import { currentUser } from "@clerk/nextjs/server";
-import SignUpSidebar from "./SignUpSidebar";
+import { SignUpSidebar } from "./SignUpSidebar";
 import { getUserByClerkId } from "@/actions/user.actions";
 import { Card, CardContent } from "./ui/card";
 import Link from "next/link";
@@ -7,7 +7,7 @@ import { Avatar, AvatarImage } from "./ui/avatar";
 import { Separator } from "./ui/separator";
 import { LinkIcon, MapPinIcon } from "lucide-react";
 
-export default async function Sidebar() {
+export async function Sidebar() {
   const authUser = await currentUser();
   if (!authUser) return <SignUpSidebar />;
 

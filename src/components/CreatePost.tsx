@@ -10,7 +10,7 @@ import { ImageIcon, Loader2Icon, SendIcon } from "lucide-react";
 import { createPost } from "@/actions/post.action";
 import toast from "react-hot-toast";
 
-export default function CreatePost() {
+export function CreatePost() {
   const { isSignedIn, user } = useUser();
   const [content, setContent] = useState("");
   const [imageUrl, setImageUrl] = useState("");

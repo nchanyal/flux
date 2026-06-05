@@ -2,7 +2,7 @@ import { SignInButton, SignUpButton } from "@clerk/nextjs";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 
-export default function SignUpSidebar() {
+export function SignUpSidebar() {
   return (
     <div className="sticky top-20">
       <Card>

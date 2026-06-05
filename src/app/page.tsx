@@ -1,9 +1,8 @@
 import { getPosts } from "@/actions/post.action";
 import { getDbUserId } from "@/actions/user.actions";
-import CreatePost from "@/components/CreatePost";
+import { CreatePost } from "@/components/CreatePost";
 import { PostCard } from "@/components/PostCard";
-import SuggestedUsers from "@/components/SuggestedUsers";
-import { currentUser } from "@clerk/nextjs/server";
+import { SuggestedUsers } from "@/components/SuggestedUsers";
 
 export default async function Home() {
   const posts = await getPosts();
