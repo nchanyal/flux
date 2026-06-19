@@ -41,7 +41,7 @@ export function PostCard({
   const [hasLiked, setHasLiked] = useState(
     post.likes.some((like) => like.userId === dbUserId)
   );
-  const [optimisticLikes, setOptmisticLikes] = useState(post._count.likes);
+  const [optimisticLikes, setOptimisticLikes] = useState(post._count.likes);
   const [showComments, setShowComments] = useState(false);
 
   const handleLike = async () => {
@@ -49,10 +49,10 @@ export function PostCard({
     try {
       setIsLiking(true); // set loading state to true
       setHasLiked((prev) => !prev);
-      setOptmisticLikes((prev) => prev + (hasLiked ? -1 : 1)); // increase or decrease the displayed number of likes
+      setOptimisticLikes((prev) => prev + (hasLiked ? -1 : 1)); // increase or decrease the displayed number of likes
       await toggleLike(post.id);
     } catch (error) {
-      setOptmisticLikes(post._count.likes);
+      setOptimisticLikes(post._count.likes);
       setHasLiked(post.likes.some((like) => like.userId === dbUserId));
     } finally {
       setIsLiking(false);
