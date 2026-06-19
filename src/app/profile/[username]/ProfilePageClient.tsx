@@ -5,7 +5,7 @@ import {
   getUserPosts,
   updateProfile,
 } from "@/actions/profile.action";
-import { toggleFollow } from "@/actions/user.actions";
+import { toggleFollow } from "@/actions/user.action";
 import { PostCard } from "@/components/PostCard";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -39,6 +39,7 @@ type User = Awaited<ReturnType<typeof getProfileByUsername>>;
 type Posts = Awaited<ReturnType<typeof getUserPosts>>;
 
 interface ProfilePageClientProps {
+  authUserDbId: string | null;
   user: NonNullable<User>;
   posts: Posts;
   likedPosts: Posts;
@@ -50,6 +51,7 @@ export default function ProfilePageClient({
   likedPosts,
   posts,
   user,
+  authUserDbId,
 }: ProfilePageClientProps) {
   const { user: currentUser } = useUser();
   const [showEditDialog, setShowEditDialog] = useState(false);
@@ -228,7 +230,7 @@ export default function ProfilePageClient({
             <div className="space-y-6">
               {posts.length > 0 ? (
                 posts.map((post) => (
-                  <PostCard key={post.id} post={post} dbUserId={user.id} />
+                  <PostCard key={post.id} post={post} dbUserId={authUserDbId} />
                 ))
               ) : (
                 <div className="text-center py-8 text-muted-foreground">
@@ -242,7 +244,7 @@ export default function ProfilePageClient({
             <div className="space-y-6">
               {likedPosts.length > 0 ? (
                 likedPosts.map((post) => (
-                  <PostCard key={post.id} post={post} dbUserId={user.id} />
+                  <PostCard key={post.id} post={post} dbUserId={authUserDbId} />
                 ))
               ) : (
                 <div className="text-center py-8 text-muted-foreground">

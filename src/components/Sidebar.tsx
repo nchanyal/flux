@@ -1,6 +1,6 @@
 import { currentUser } from "@clerk/nextjs/server";
 import { SignUpSidebar } from "./SignUpSidebar";
-import { getUserByClerkId } from "@/actions/user.actions";
+import { getUserByClerkId } from "@/actions/user.action";
 import { Card, CardContent } from "./ui/card";
 import Link from "next/link";
 import { Avatar, AvatarImage } from "./ui/avatar";

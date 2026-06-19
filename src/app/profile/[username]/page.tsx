@@ -6,6 +6,7 @@ import {
 } from "@/actions/profile.action";
 import { notFound } from "next/navigation";
 import ProfilePageClient from "./ProfilePageClient";
+import { getDbUserId } from "@/actions/user.action";
 
 export async function generateMetadata({
   params,
@@ -29,6 +30,7 @@ export default async function ProfilePageServer({
 }) {
   const { username } = await params;
   const user = await getProfileByUsername(username);
+  const authUserDbId = await getDbUserId();
 
   if (!user) notFound();
 
@@ -40,6 +42,7 @@ export default async function ProfilePageServer({
 
   return (
     <ProfilePageClient
+      authUserDbId={authUserDbId}
       user={user}
       posts={posts}
       likedPosts={likedPosts}
