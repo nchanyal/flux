@@ -2,6 +2,7 @@ import { getPosts } from "@/actions/post.action";
 import { getDbUserId } from "@/actions/user.action";
 import { CreatePost } from "@/components/CreatePost";
 import { PostCard } from "@/components/PostCard";
+import { SignUpSuggestedUsers } from "@/components/SignUpSuggestedUsers";
 import { SuggestedUsers } from "@/components/SuggestedUsers";
 
 export default async function Home() {
@@ -19,7 +20,7 @@ export default async function Home() {
         </div>
       </div>
       <div className="hidden lg:block lg:col-span-4 sticky top-20">
-        <SuggestedUsers />
+        {dbUserId ? <SuggestedUsers /> : <SignUpSuggestedUsers />}
       </div>
     </div>
   );
