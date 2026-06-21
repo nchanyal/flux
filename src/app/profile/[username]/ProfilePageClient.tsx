@@ -208,19 +208,11 @@ export default function ProfilePageClient({
             className="w-full justify-start border-b rounded-none h-auto p-0 bg-transparent"
             variant={"line"}
           >
-            <TabsTrigger
-              value="posts"
-              className="flex items-center gap-2 rounded-none data-[state=active]:border-b-2 data-[state=active]:border-primary
-               data-[state=active]:bg-transparent px-6 font-semibold"
-            >
+            <TabsTrigger value="posts">
               <FileTextIcon className="size-4" />
               Posts
             </TabsTrigger>
-            <TabsTrigger
-              value="likes"
-              className="flex items-center gap-2 rounded-none data-[state=active]:border-b-2 data-[state=active]:border-primary
-               data-[state=active]:bg-transparent px-6 font-semibold"
-            >
+            <TabsTrigger value="likes">
               <HeartIcon className="size-4" />
               Likes
             </TabsTrigger>
