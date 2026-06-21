@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { Notifications } from "@/components/Notifications";
 import { SuggestedUsers } from "@/components/SuggestedUsers";
 
