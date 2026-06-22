@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Flux",
-  description: "A modern social media application powered by Next.js",
+  description: "A modern social media application built with Next.js",
 };
 
 export default function RootLayout({
@@ -35,7 +35,7 @@ export default function RootLayout({
         >
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >

@@ -11,7 +11,6 @@ export function SignUpSuggestedUsers() {
       <CardContent>
         <CardContent className="px-0">
           <div className="space-y-4">
-            {/** Content */}
             <p className="text-center text-muted-foreground mb-4">
               Login to see who to follow.
             </p>
