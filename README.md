@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Flux
 
-## Getting Started
+Flux is a full-stack social media application that allows users to create posts, like content, and follow other users.
 
-First, run the development server:
+## 🚀 Live Demo
+
+🔗 https://flux-delta-two.vercel.app/
+
+## ✨ Features
+
+- Secure user authentication and authorization with Clerk
+- Create and delete posts
+- Add comments to posts
+- Like and unlike posts
+- Follow and unfollow other users
+- Upload images to posts with UploadThing
+- Receive notifications for new likes, comments, and followers
+- Instant toast notifications for user actions
+- Discover new users through suggestions
+- View and update your profile
+- Browse other users' profiles, including their posts and liked content
+- Protected routes for authenticated users
+- Dark and light mode support
+- Fully responsive design for desktop and mobile devices
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- React
+- Next.js
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+
+### Backend
+
+- Clerk (Authentication)
+- Neon (Serverless PostgreSQL)
+- Prisma ORM
+- UploadThing
+
+### Deployment
+
+- Vercel
+
+## 📸 Homepage
+
+![Flux Homepage](./public/homepage.png)
+
+## 📦 Installation
+
+Clone the repository:
+
+```bash
+git clone git@github.com:nchanyal/flux.git
+cd flux
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file and add the required environment variables:
+
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+DATABASE_URL=
+UPLOADTHING_TOKEN=
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
