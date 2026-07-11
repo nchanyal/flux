@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getPosts } from "@/actions/post.action";
 import { getDbUserId, syncUser } from "@/actions/user.action";
 import { CreatePost } from "@/components/CreatePost";
