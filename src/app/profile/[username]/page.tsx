@@ -30,9 +30,10 @@ export default async function ProfilePageServer({
 }) {
   const { username } = await params;
   const user = await getProfileByUsername(username);
-  const authUserDbId = await getDbUserId();
 
   if (!user) notFound();
+
+  const authUserDbId = await getDbUserId();
 
   const [posts, likedPosts, isCurrentUserFollowing] = await Promise.all([
     getUserPosts(user.id),
