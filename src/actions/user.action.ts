@@ -58,6 +58,14 @@ export async function syncProfilePicture() {
 }
 
 export async function getUserByClerkId(clerkId: string) {
+  const user = await prisma.user.findUnique({
+    where: {
+      clerkId: clerkId,
+    },
+  });
+
+  if (!user) await syncUser();
+
   return prisma.user.findUnique({
     where: {
       clerkId: clerkId,

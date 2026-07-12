@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 
 import { getPosts } from "@/actions/post.action";
-import { getDbUserId, syncUser } from "@/actions/user.action";
+import { getDbUserId } from "@/actions/user.action";
 import { CreatePost } from "@/components/CreatePost";
 import { PostCard } from "@/components/PostCard";
 import { SignUpSuggestedUsers } from "@/components/SignUpSuggestedUsers";
@@ -9,7 +9,6 @@ import { SuggestedUsers } from "@/components/SuggestedUsers";
 
 export default async function Home() {
   try {
-    await syncUser();
     const posts = await getPosts();
     const dbUserId = await getDbUserId();
 
